@@ -1,0 +1,155 @@
+{% extends 'fronted/base.html' %}
+{% load static %}
+{% block content %}
+<section class="wrapper">
+		<div class="container">
+			<div class="row main_row bottomborder">
+				<div class="col-xl-2 col-lg-3 col-md-4 side">
+					<div class="s_menu">
+
+						<div class="title">Bosh menyu</div>
+						<ul>
+							{% for cat in categories %}
+							<li><a href="{% url 'news' news_id=cat.id %}">{{cat.name}}</a></li>
+							{% endfor %}
+						</ul>
+					</div>
+
+					<div class="rektor_time">
+						<div class="title">Rektor qabul vaqti</div>
+						<img src="{% static 'fronted/img/rektor.jpg '%}" alt="">
+						Dushanba - Juma <br> 15:00 - 17:00
+					</div>
+					<div class="pict_news">
+						<div class="title">faxriy sportchilarimiz</div>
+						<a href="#">
+							<img src="{% static 'fronted/img/pict1.jpg '%}" alt="">
+						</a>
+					</div>
+					<div class="pict_news">
+						<div class="title">iqtidorli talabalar</div>
+						<a href="#">
+							<img src="{% static 'fronted/img/pict1.jpg '%}" alt="">
+						</a>
+					</div>
+				</div>
+
+
+				<div class="col-xl-8 col-lg-6 col-md-8 main">
+					<div class="pict_box" style="background: url(/media/{{new.image}}) no-repeat center center/cover">
+						<div class="caption">{{new.title}}</div>
+					</div>
+					<nav aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="{% url 'index' %}">Bosh sahifa</a></li>
+							<li class="breadcrumb-item"><a href="#">Yangiliklar</a></li>
+							<li class="breadcrumb-item active" aria-current="page">{{new.title}}</li>
+						</ol>
+					</nav>
+					<div class="text">
+						<p>{{new.description}}</p>
+					</div>
+				</div>
+
+
+				<div class="col-xl-2 col-lg-3 col-md-12 side">
+					<a href="tel:+99870 717-17-76" class="big">
+						<img src="{% static 'fronted/img/r_1.png' %}" alt="">
+						Ishonch telefoni <br>
+						+99870 717-17-76
+					</a>
+					<a href="#" class="big">
+						<img src="{% static 'fronted/img/r_2.png' %}" alt="">
+						Interaktiv <br> xizmatlar
+					</a>
+					<div class="info_box">
+						<b>8</b> ta murojaat kelib tushdi <br>
+						<b>25</b> ta murojaat ko'rib chiqildi <br>
+						<b>3</b> ta murojaat ko'rilish jarayonida <br>
+					</div>
+					<a href="https://www.4icu.org/reviews/universities-urls/4848.shtm" class="big">
+						<img src="{% static 'fronted/img/r_3.png' %}" alt="">
+						Elektron <br> qabulxona
+					</a>
+					<a href="https://www.4icu.org/reviews/universities-urls/4848.shtm" class="big">
+						<img src="{% static 'fronted/img/r_4.png' %}" alt="">
+						Axborot ta'lim <br> portali
+					</a>
+
+					<div class="pict_news">
+						<div class="title">Uzsport.uz</div>
+						<a href="https://sports.uz/">
+							<img src="{% static 'fronted/img/pict1.jpg' %}" alt="">
+						</a>
+					</div>
+
+					<div class="quest">
+						<div class="title">So’rov</div>
+						<div class="q">Interaktiv xizmatlarga baho bering</div>
+						<form action="">
+							<div class="input">
+								<input type="checkbox" id="q1">
+								<label for="q1">Juda yaxshi</label>
+							</div>
+							<div class="input">
+								<input type="checkbox" id="q2">
+								<label for="q2">Juda yaxshi</label>
+							</div>
+							<div class="input">
+								<input type="checkbox" id="q3">
+								<label for="q3">Juda yaxshi</label>
+							</div>
+							<button>Ovoz berish</button>
+						</form>
+						<img src="{% static 'fronted/img/questbg.png' %}" alt="" class="bg">
+					</div>
+				</div>
+				<hr>
+			</div>
+
+				<div class="gallery">
+					<div class="b_title">fotogalereya</div>
+					<div class="gal_list">
+
+						{% for fresh in fresh_news%}
+						<div class="item">
+							<a href="{% url 'view' pk=fresh.id  %}" data-lightbox="roadtrip">
+								<div style="width:200px;height:150px; background:url(/media/{{fresh.image}}) no-repeat; background-size:cover;">
+								</div>
+							</a>
+						</div>
+						{% endfor %}
+
+					</div>
+				</div>
+
+
+				<div class="resurs">
+					<div class="b_title">Daxlat axborot resurslari</div>
+					<div class="res_list">
+						<div class="item">
+							<a href="https://www.gov.uz/uz">
+								<img src="{% static 'fronted/img/gerb.jpg' %}" alt="">
+								O'zbekiston Respublikasining hukumat portali
+							</a>
+							<a href="https://strategy.uz/index.php">
+								<img src="{% static 'fronted/img/stra.png' %}" alt="">
+								Taraqqiyot strategiyasi markazi
+							</a>
+						</div>
+						<div class="item">
+							<a href="http://www.openinfo.uz/ru/">
+								<img src="{% static 'fronted/img/kor.png' %}" alt="">
+								Korparativ axborat yagona portali
+							</a>
+							<a href="https://president.uz/uz">
+								<img src="{% static 'fronted/img/mat.jpg' %}" alt="">
+								O'zbekiston Respublikasining Prezident matbuaot portali
+							</a>
+						</div>
+					</div>
+				</div>
+
+		</div>
+	</section>
+{% endblock %}

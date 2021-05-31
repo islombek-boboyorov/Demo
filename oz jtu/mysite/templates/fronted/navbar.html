@@ -1,0 +1,65 @@
+{% load static %}
+<header>
+        <div class="container">
+            <ul class="social">
+                <li><a href="#"><i class="fa fa-telegram"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            </ul>
+
+
+            <form action="{% url 'search' %}" method="get" class="search">
+                <div class="input">
+                    <input type="text" name="search"  placeholder="Qidiruv">
+                    <button type="submit" ><i class="fa fa-search"></i></button>
+                </div>
+            </form>
+
+
+            <ul class="lang">
+                    <li><a href="#">O’z</a></li>
+                    <li><a href="#">Ру</a></li>
+                    <li><a href="#">En</a></li>
+            </ul>
+            <ul class="sup">
+                <li id="uhvb"><a  href="javascript://" onclick="uvcl()"><i class="fa fa-eye"></i><span class="text" >Ko’zi ochizlar uchun</span></a></li>
+                <li><a href="#" onclick="window.open('/', 'newwindow', 'width=700, height=600'); return false;"><i class="fa fa-mobile"></i> <span class="text">Mobil ko’rinishi</span></a></li>
+                <li><a href="#"><i class="fa fa-sitemap"></i> <span class="text">Sayt xaritasi</span></a></li>
+            </ul>
+        </div>
+</header>
+<div class="logo_box">
+    <div class="container">
+        <ul class="contact">
+            <li><img src="{% static 'fronted/img/phone.png ' %}" alt=""> (370) 717-17-76</li>
+            <li><img src="{% static 'fronted/img/fax.png ' %}" alt=""> 998 (70) 717-17-76</li>
+            <li><img src="{% static 'fronted/img/envelope.png ' %}" alt=""> uzdjtsu@uzdjtsu.uz</li>
+            <li><img src="{% static 'fronted/img/time.png ' %}" alt=""> 9:00 dan 18:00</li>
+        </ul>
+        <a href="#" class="logo"><img src="{% static 'fronted/img/logo.jpg ' %}" alt=""></a>
+        <div class="title">O'ZBEKISTON DAVLAT JISMONIY <br> TARBIYA VA SPORT UNIVERSITETI</div>
+    </div>
+</div>
+<nav class="navbar">
+		<div class="container">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    	<i class="fa fa-bars"></i>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="nav navbar-nav">
+				<li><a href="#" class="home"><img src="{% static 'fronted/img/home.png ' %}" alt=""></a></li>
+				<li><a href="#">Yangiliklar</a></li>
+				<li><a href="#">Universitet haqida</a></li>
+				<li><a href="#">Ilmiy faoliyat</a></li>
+				<li><a href="#">Xalqaro aloqalar</a></li>
+				<li><a href="#">Interaktiv xizmatlar</a></li>
+				<li><a href="#">Abiturient</a></li>
+				<li><a href="#">Talabalar</a></li>
+				<li><a href="#">Manzil</a></li>
+
+			</ul>
+			</div>
+		</div><!-- /.container-fluid -->
+	</nav>
+
