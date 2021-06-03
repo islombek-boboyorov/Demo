@@ -65,22 +65,23 @@
 						<hr>
 						<div class="feedback">
 							<div class="title">Teskari aloqa</div>
-							<form action="">
+							<form method="post">
+								{% csrf_token %}
 								<div class="row">
 									<div class="col-xs-6 col-lg-6 col-md-6">
 										<div class="input">
-											<input type="text" placeholder="Ism-familiya">
+											<input type="text" name="full_name" placeholder="Ism-familiya">
 										</div>
 									</div>
 									<div class="col-xs-6 col-lg-6 col-md-6">
 										<div class="input">
-											<input type="text" placeholder="Email">
+											<input type="text" name="email" placeholder="Email">
 
 										</div>
 									</div>
 									<div class="col-xs-12 col-lg-12 col-md-12">
 										<div class="input">
-											<textarea name="" id="" placeholder="Xabar matni"></textarea>
+											<textarea  id="" name="message" placeholder="Xabar matni"></textarea>
 										</div>
 									</div>
 									<div class="col-xs-12 col-lg-12 col-md-12">
@@ -99,19 +100,15 @@
 						Ishonch telefoni <br>
 						+99870 717-17-76
 					</a>
-					<a href="#" class="big">
+					<a href="{% url 'teachers' %}" class="big">
 						<img src="{% static 'fronted/img/r_2.png' %}" alt="">
-						Interaktiv <br> xizmatlar
+						O`qituvchilar <br> xizmatlari
 					</a>
 					<div class="info_box">
 						<b>8</b> ta murojaat kelib tushdi <br>
 						<b>25</b> ta murojaat ko'rib chiqildi <br>
 						<b>3</b> ta murojaat ko'rilish jarayonida <br>
 					</div>
-					<a href="https://www.4icu.org/reviews/universities-urls/4848.shtm" class="big">
-						<img src="{% static 'fronted/img/r_3.png' %}" alt="">
-						Elektron <br> qabulxona
-					</a>
 					<a href="https://www.4icu.org/reviews/universities-urls/4848.shtm" class="big">
 						<img src="{% static 'fronted/img/r_4.png' %}" alt="">
 						Axborot ta'lim <br> portali
@@ -129,16 +126,16 @@
 						<div class="q">Interaktiv xizmatlarga baho bering</div>
 						<form action="">
 							<div class="input">
-								<input type="checkbox" id="q1">
-								<label for="q1">Juda yaxshi</label>
+								<input type="checkbox"  id="q1">
+								<label for="q1">Yaxshi</label>
 							</div>
 							<div class="input">
 								<input type="checkbox" id="q2">
-								<label for="q2">Juda yaxshi</label>
+								<label for="q2">Qoniqarli</label>
 							</div>
 							<div class="input">
 								<input type="checkbox" id="q3">
-								<label for="q3">Juda yaxshi</label>
+								<label for="q3">Qoniqarsiz</label>
 							</div>
 							<button>Ovoz berish</button>
 						</form>

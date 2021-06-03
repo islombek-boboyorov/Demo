@@ -3,6 +3,8 @@ from .models import *
 from django.utils import timezone
 import datetime
 from . import servise
+from dashboard.forms import *
+from django.http import JsonResponse
 
 
 def index(request):
@@ -43,6 +45,23 @@ def news(request, news_id=None):
 
     }
     return render(request, 'fronted/news/category.html', ctx)
+
+
+def contact(request):
+    model = Contact()
+    form = ContactForm(request.POST, instance=model)
+    print(form)
+    if request.POST:
+        print(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+        else:
+            print(form.errors)
+    ctx = {
+        "form": form
+    }
+    return render(request, 'fronted/news/contact.html', ctx)
 
 
 def basic(request, news_id=None):
@@ -103,3 +122,21 @@ def search(request):
         "basics": basics,
     }
     return render(request, 'fronted/news/search.html', ctx)
+
+
+def teacher(request):
+    teachers = servise.get_teachers()
+    ctx = {
+        "teachers": teachers,
+    }
+    return render(request, 'fronted/news/teachers.html', ctx)
+
+
+def quests(request):
+    if request.POST:
+        servise.get_quest_info(int(request.POST.get("pk", 0)))
+        return JsonResponse({"status": "added"})
+    else:
+        return JsonResponse({"status": "not post request"})
+
+

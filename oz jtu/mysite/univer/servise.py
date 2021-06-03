@@ -2,11 +2,25 @@ from django.db import connection
 from contextlib import closing
 
 
+def get_quest_info(pk):
+    with closing(connection.cursor()) as cursor:
+        cursor.execute("""update univer_quest set "quest" = "quest" + 1 where id = %s returning * """, [pk])
+        quest = dict_fetchone(cursor)
+    return quest
+
+
 def get_menu():
     with closing(connection.cursor()) as cursor:
         cursor.execute("""select * from univer_menu""")
         menu = dict_fetchall(cursor)
     return menu
+
+
+def get_teachers():
+    with closing(connection.cursor()) as cursor:
+        cursor.execute("""select * from univer_teacher""")
+        teach = dict_fetchall(cursor)
+    return teach
 
 
 def get_basic():

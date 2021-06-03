@@ -32,27 +32,33 @@
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="{% url 'menu_list' %}" class="nav-link">
+            <i class="nav-icon far fa-image"></i>
+            <p>Menu</p>
+          </a>
+        </li>
+         <li class="nav-item">
+          <a href="{% url 'basic_list' %}" class="nav-link">
+            <i class="nav-icon far fa-image"></i>
+            <p>Footer_category</p>
+          </a>
+        </li>
+         <li class="nav-item">
+          <a href="{% url 'category_list' %}" class="nav-link">
             <i class="nav-icon far fa-image"></i>
             <p>Category</p>
           </a>
         </li>
          <li class="nav-item">
-          <a href="#" class="nav-link">
-            <i class="nav-icon far fa-image"></i>
-            <p>Author</p>
-          </a>
-        </li>
-         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="{% url 'news_list' %}" class="nav-link">
             <i class="nav-icon far fa-image"></i>
             <p>News</p>
           </a>
         </li>
-         <li class="nav-item">
-          <a href="#" class="nav-link">
+           <li class="nav-item">
+          <a href="{% url 'teacher_list' %}" class="nav-link">
             <i class="nav-icon far fa-image"></i>
-            <p>Reference</p>
+            <p>Teacher</p>
           </a>
         </li>
         <li class="nav-item">

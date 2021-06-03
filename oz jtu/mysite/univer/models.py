@@ -60,3 +60,11 @@ class Teacher(models.Model):
 
     def __str__(self):
         return self.full_name
+
+
+class Quest(models.Model):
+    name = models.CharField(max_length=128, blank=False, null=False)
+    quest = models.IntegerField(blank=True, null=False, default=0)
+
+    def __str__(self):
+        return self.name

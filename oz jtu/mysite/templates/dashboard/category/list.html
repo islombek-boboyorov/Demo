@@ -5,12 +5,12 @@
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1>Menu List</h1>
+        <h1>Category List</h1>
       </div>
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
           <li class="breadcrumb-item"><a href="">Home</a></li>
-          <li class="breadcrumb-item active">Menu List</li>
+          <li class="breadcrumb-item active">Category List</li>
         </ol>
       </div>
     </div>
@@ -22,10 +22,8 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-
-
                 <div class="card-tools">
-                  <a href="{% url 'menu_add' %}"><div class="btn btn-block btn-success">Add</div></a>
+                  <a href="{% url 'category_add' %}"><div class="btn btn-block btn-success">Add</div></a>
                 </div>
               </div>
               <!-- /.card-header -->
@@ -41,13 +39,13 @@
                     </tr>
                   </thead>
                   <tbody>
-                    {% for menu in menus %}
+                    {% for category in categories %}
                     <tr>
                       <td>{{ forloop.counter }}</td>
-                      <td>{{ menu.name }}</td>
-                      <td>{{ menu.created_at }}</td>
-                      <td><a href="{% url 'menu_edit' pk=menu.id %}"><div class="btn btn-block btn-primary">Edit</div></a></td>
-                      <td><a href="{% url 'menu_delete' pk=menu.id %}"><div class="btn btn-block btn-danger">Delete</div></a></td>
+                      <td>{{ category.name }}</td>
+                      <td>{{ category.created_at }}</td>
+                      <td><a href="{% url 'category_edit' pk=category.id %}"><div class="btn btn-block btn-primary">Edit</div></a></td>
+                      <td><a href="{% url 'category_delete' pk=category.id %}"><div class="btn btn-block btn-danger">Delete</div></a></td>
                     </tr>
                     {% endfor %}
                   </tbody>

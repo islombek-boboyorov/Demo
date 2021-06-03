@@ -42,7 +42,7 @@
 					<nav aria-label="breadcrumb">
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a href="{% url 'index' %}">Bosh sahifa</a></li>
-							<li class="breadcrumb-item"><a href="#">Yangiliklar</a></li>
+							<li class="breadcrumb-item"><a href="{% url 'news' news_id=new.category_id %}">Yangiliklar</a></li>
 							<li class="breadcrumb-item active" aria-current="page">{{new.title}}</li>
 						</ol>
 					</nav>

@@ -77,16 +77,16 @@
 						Ishonch telefoni <br>
 						+99870 717-17-76
 					</a>
-					<a href="#" class="big">
+					<a href="{% url 'teachers' %}" class="big">
 						<img src="{% static 'fronted/img/r_2.png' %}" alt="">
-						Interaktiv <br> xizmatlar
+						O'qituvvchilarimiz <br> xizmatlari
 					</a>
 					<div class="info_box">
 						<b>8</b> ta murojaat kelib tushdi <br>
 						<b>25</b> ta murojaat ko'rib chiqildi <br>  
 						<b>3</b> ta murojaat ko'rilish jarayonida <br>
 					</div>	
-					<a href="https://www.4icu.org/reviews/universities-urls/4848.shtm" class="big">
+					<a href="{% url 'contact' %}" class="big">
 						<img src="{% static 'fronted/img/r_3.png' %}" alt="">
 						Elektron <br> qabulxona
 					</a>
@@ -104,21 +104,22 @@
 
 					<div class="quest">
 						<div class="title">So’rov</div>
-						<div class="q">Interaktiv xizmatlarga baho bering</div>
-						<form action="">
+						<div class="q">O'qituvvchilarimiz xizmatlarga baho bering</div>
+						<form action="" method="post">
+							{% csrf_token %}
 							<div class="input">
-								<input type="radio" name="quest" id="1">
+								<input type="radio" value="1" name="quest" id="1">
 								<label for="1">Juda yaxshi</label>
 							</div>
 							<div class="input">
-								<input type="radio" name="quest" id="1">
-								<label for="1">Juda yaxshi</label>
+								<input type="radio" value="2" name="quest" id="1">
+								<label for="1">Qoniqarli</label>
 							</div>
 							<div class="input">
-								<input type="radio" name="quest" id="1">
-								<label for="1">Juda yaxshi</label>
+								<input type="radio" value="3" name="quest" id="1">
+								<label for="1">Qoniqarsiz</label>
 							</div>
-							<button>Ovoz berish</button>
+							<button type="button" onclick="qwerty()">Ovoz berish</button>
 						</form>
 						<img src="{% static 'fronted/img/questbg.png' %}" alt="" class="bg">
 					</div>
@@ -174,5 +175,21 @@
 
 		</div>
 	</section>
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script>
+	function qwerty(){
+		$.ajax({
+			type: 'POST',
+			url: "{% url 'quests' %}",
+			data: {"csrfmiddlewaretoken": document.getElementsByName("csrfmiddlewaretoken")[0].value, "pk": 2},
+			success: function (response) {
+				alert("Done!");
+			},
+			error: function (response) {
+				console.log(response)
+			}
+		})
+	}
+</script>
 {% endblock %}
 

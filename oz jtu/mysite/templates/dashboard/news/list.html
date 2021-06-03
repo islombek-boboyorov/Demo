@@ -5,12 +5,12 @@
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1>Menu List</h1>
+        <h1>News List</h1>
       </div>
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
           <li class="breadcrumb-item"><a href="">Home</a></li>
-          <li class="breadcrumb-item active">Menu List</li>
+          <li class="breadcrumb-item active">News List</li>
         </ol>
       </div>
     </div>
@@ -22,10 +22,8 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-
-
                 <div class="card-tools">
-                  <a href="{% url 'menu_add' %}"><div class="btn btn-block btn-success">Add</div></a>
+                  <a href="{% url 'news_add' %}"><div class="btn btn-block btn-success">Add</div></a>
                 </div>
               </div>
               <!-- /.card-header -->
@@ -35,19 +33,25 @@
                     <tr>
                       <th>№</th>
                       <th>Name</th>
+                      <th>Category_id</th>
+                      <th>Basic_id_id</th>
+                      <th>Views</th>
                       <th>Date</th>
                       <th>Edit</th>
                       <th>Delete</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {% for menu in menus %}
+                    {% for new in news %}
                     <tr>
                       <td>{{ forloop.counter }}</td>
-                      <td>{{ menu.name }}</td>
-                      <td>{{ menu.created_at }}</td>
-                      <td><a href="{% url 'menu_edit' pk=menu.id %}"><div class="btn btn-block btn-primary">Edit</div></a></td>
-                      <td><a href="{% url 'menu_delete' pk=menu.id %}"><div class="btn btn-block btn-danger">Delete</div></a></td>
+                      <td>{{ new.title }}</td>
+                      <td>{{ new.category_id }}</td>
+                      <td>{{ new.basic_id }}</td>
+                      <td>{{ new.views }}</td>
+                      <td>{{ new.created_at }}</td>
+                      <td><a href="{% url 'news_edit' pk=new.id %}"><div class="btn btn-block btn-primary">Edit</div></a></td>
+                      <td><a href="{% url 'news_delete' pk=new.id %}"><div class="btn btn-block btn-danger">Delete</div></a></td>
                     </tr>
                     {% endfor %}
                   </tbody>

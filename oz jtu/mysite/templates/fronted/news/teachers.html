@@ -37,46 +37,18 @@
 				<div class="col-xl-8 col-lg-6 col-md-8 main">
 					<h1>Teachers</h1>
 					<div class="persons_list">
+						{% for teach in teachers %}
 						<div class="item">
-							<div class="img"><img src="img/pict1.jpg" alt=""></div>
-							<div class="lvl">Dean of the faculty "Computer engineering"</div>
-							<a href="#" class="title">Yaxshibayev Doniyor Sultonbayevich</a>
-							<div class="time"><i class="fa fa-clock-o"></i> Hours: Every day from 14:00 to 16:00 (except Monday and Saturday)</div>
-							<div class="phone"><i class="fa fa-phone"></i> Phone number: (8 371) 238-64-13
-</div>
-							<div class="email"><i class="fa fa-envelope"></i> E-mail:d.yaxshibayev@tuit.uz</div>
+							<div class="img"><img src="/media/{{teach.image}}" alt=""></div>
+							<div class="lvl">{{teach.professional}}"</div>
+							<a href="#" class="title">{{teach.full_name}}</a>
+							<div class="time"><i class="fa fa-clock-o"></i> Hours:{{teach.time}}</div>
+							<div class="phone"><i class="fa fa-phone"></i> Phone number: {{teach.phone}}
+							</div>
+							<div class="email"><i class="fa fa-envelope"></i> E-mail:{{teach.email}}</div>
 							<div class="clearfix"></div>
 						</div>
-						<div class="item">
-							<div class="img"><img src="img/pict1.jpg" alt=""></div>
-							<div class="lvl">Dean of the faculty "Computer engineering"</div>
-							<a href="#" class="title">Yaxshibayev Doniyor Sultonbayevich</a>
-							<div class="time"><i class="fa fa-clock-o"></i> Hours: Every day from 14:00 to 16:00 (except Monday and Saturday)</div>
-							<div class="phone"><i class="fa fa-phone"></i> Phone number: (8 371) 238-64-13
-</div>
-							<div class="email"><i class="fa fa-envelope"></i> E-mail:d.yaxshibayev@tuit.uz</div>
-							<div class="clearfix"></div>
-						</div>
-						<div class="item">
-							<div class="img"><img src="img/pict1.jpg" alt=""></div>
-							<div class="lvl">Dean of the faculty "Computer engineering"</div>
-							<a href="#" class="title">Yaxshibayev Doniyor Sultonbayevich</a>
-							<div class="time"><i class="fa fa-clock-o"></i> Hours: Every day from 14:00 to 16:00 (except Monday and Saturday)</div>
-							<div class="phone"><i class="fa fa-phone"></i> Phone number: (8 371) 238-64-13
-</div>
-							<div class="email"><i class="fa fa-envelope"></i> E-mail:d.yaxshibayev@tuit.uz</div>
-							<div class="clearfix"></div>
-						</div>
-						<div class="item">
-							<div class="img"><img src="img/pict1.jpg" alt=""></div>
-							<div class="lvl">Dean of the faculty "Computer engineering"</div>
-							<a href="#" class="title">Yaxshibayev Doniyor Sultonbayevich</a>
-							<div class="time"><i class="fa fa-clock-o"></i> Hours: Every day from 14:00 to 16:00 (except Monday and Saturday)</div>
-							<div class="phone"><i class="fa fa-phone"></i> Phone number: (8 371) 238-64-13
-</div>
-							<div class="email"><i class="fa fa-envelope"></i> E-mail:d.yaxshibayev@tuit.uz</div>
-							<div class="clearfix"></div>
-						</div>
+						{% endfor %}
 
 					</div>
 					<ul class="breadcrumbs">
@@ -96,10 +68,7 @@
 						Ishonch telefoni <br>
 						+99870 717-17-76
 					</a>
-					<a href="#" class="big">
-						<img src="{% static 'fronted/img/r_2.png' %}" alt="">
-						Interaktiv <br> xizmatlar
-					</a>
+
 					<div class="info_box">
 						<b>8</b> ta murojaat kelib tushdi <br>
 						<b>25</b> ta murojaat ko'rib chiqildi <br>
@@ -123,7 +92,7 @@
 
 					<div class="quest">
 						<div class="title">So’rov</div>
-						<div class="q">Interaktiv xizmatlarga baho bering</div>
+						<div class="q">O'qituvvchilarimiz xizmatlarga baho bering</div>
 						<form action="">
 							<div class="input">
 								<input type="checkbox" id="q1">
@@ -131,11 +100,11 @@
 							</div>
 							<div class="input">
 								<input type="checkbox" id="q2">
-								<label for="q2">Juda yaxshi</label>
+								<label for="q2">Qoniqarli</label>
 							</div>
 							<div class="input">
 								<input type="checkbox" id="q3">
-								<label for="q3">Juda yaxshi</label>
+								<label for="q3">Qoniqarsiz</label>
 							</div>
 							<button>Ovoz berish</button>
 						</form>

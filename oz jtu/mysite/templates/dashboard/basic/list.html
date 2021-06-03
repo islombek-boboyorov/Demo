@@ -22,10 +22,8 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-
-
                 <div class="card-tools">
-                  <a href="{% url 'menu_add' %}"><div class="btn btn-block btn-success">Add</div></a>
+                  <a href="{% url 'basic_add' %}"><div class="btn btn-block btn-success">Add</div></a>
                 </div>
               </div>
               <!-- /.card-header -->
@@ -35,19 +33,21 @@
                     <tr>
                       <th>№</th>
                       <th>Name</th>
+                      <th>Menu_id</th>
                       <th>Date</th>
                       <th>Edit</th>
                       <th>Delete</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {% for menu in menus %}
+                    {% for basic in basics %}
                     <tr>
                       <td>{{ forloop.counter }}</td>
-                      <td>{{ menu.name }}</td>
-                      <td>{{ menu.created_at }}</td>
-                      <td><a href="{% url 'menu_edit' pk=menu.id %}"><div class="btn btn-block btn-primary">Edit</div></a></td>
-                      <td><a href="{% url 'menu_delete' pk=menu.id %}"><div class="btn btn-block btn-danger">Delete</div></a></td>
+                      <td>{{ basic.name }}</td>
+                      <td>{{ basic.menu_id }}</td>
+                      <td>{{ basic.created_at }}</td>
+                      <td><a href="{% url 'basic_edit' pk=basic.id %}"><div class="btn btn-block btn-primary">Edit</div></a></td>
+                      <td><a href="{% url 'basic_delete' pk=basic.id %}"><div class="btn btn-block btn-danger">Delete</div></a></td>
                     </tr>
                     {% endfor %}
                   </tbody>
